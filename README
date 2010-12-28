@@ -12,8 +12,6 @@ The YiinfiniteScroller class extends the CBasePager class, so you will use it th
 
 On your controller you need to create the CPagination class which controls the pages handling:
 
-~~~
-[php]
 class PostController extends Controller
 {
 	public function actionIndex()
@@ -33,22 +31,19 @@ class PostController extends Controller
             ));
 	}
 }
-~~~
+
 
 Now on your view you will use it as a widget, like in the following sample:
 
-~~~
-[php]
 $this->widget('ext.yiinfinite-scroll.YiinfiniteScroller', array(
     'itemSelector' => 'div.post',
     'pages' => $pages,
 ));
-~~~
+
 
 There are a few properties that can be set for YiinfiniteScroller:
 
 - contentSelector: The jQuery selector of the container element where the loaded items (from itemSelector) will be appended
-- loadingText: The text to be displayed and a new page is being loaded,
-- donetext: The text to be displayed when all the pages had been loaded,
-- pages:  The CPagination object,
-));
+- loadingText: The text to be displayed and a new page is being loaded
+- donetext: The text to be displayed when all the pages had been loaded
+- pages:  The CPagination object
