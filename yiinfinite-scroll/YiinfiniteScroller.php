@@ -74,7 +74,7 @@ class YiinfiniteScroller extends CBasePager {
 
     private function buildInifiniteScrollOptions() {
         $options = array_merge($this->_options, $this->_default_options);
-		  $options = array_filter( $options );
+        $options = array_filter( $options );
         $options = CJavaScript::encode($options);
         return $options;
     }
