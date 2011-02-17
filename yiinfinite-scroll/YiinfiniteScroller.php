@@ -20,6 +20,7 @@ class YiinfiniteScroller extends CBasePager {
         'loadingText'   => null,
         'donetext'      => null,
         'itemSelector'  => null,
+        'errorCallback'  => null,
     );
 
     private $_default_options = array(
@@ -72,20 +73,9 @@ class YiinfiniteScroller extends CBasePager {
     }
 
     private function buildInifiniteScrollOptions() {
-        $options = '{';
-        $options_pairs = array();
-
-        $merged_options = array_merge($this->_options, $this->_default_options);
-
-        foreach($merged_options as $option => $value) {
-            if($value) {
-                $options_pairs[] = "$option: '$value'";
-            }
-        }
-        
-        $options .= implode(', ', $options_pairs);
-        $options .= '}';
-
+        $options = array_merge($this->_options, $this->_default_options);
+		  $options = array_filter( $options );
+        $options = CJavaScript::encode($options);
         return $options;
     }
 
