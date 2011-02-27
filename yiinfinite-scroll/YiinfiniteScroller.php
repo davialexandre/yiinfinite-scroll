@@ -20,7 +20,7 @@ class YiinfiniteScroller extends CBasePager {
         'loadingText'   => null,
         'donetext'      => null,
         'itemSelector'  => null,
-        'errorCallback'  => null,
+        'errorCallback' => null,
     );
 
     private $_default_options = array(
@@ -38,7 +38,7 @@ class YiinfiniteScroller extends CBasePager {
         $this->registerClientScript();
         $this->createInfiniteScrollScript();
         $this->renderNavigation();
-        
+
         if($this->theresNoMorePages()) {
             throw new CHttpException(404);
         }
