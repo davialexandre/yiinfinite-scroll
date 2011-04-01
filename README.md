@@ -12,6 +12,8 @@ The YiinfiniteScroller class extends the CBasePager class, so you will use it th
 
 On your controller you need to create the CPagination class which controls the pages handling:
 
+~~~
+[php]
 class PostController extends Controller
 {
 	public function actionIndex()
@@ -20,7 +22,7 @@ class PostController extends Controller
             $total = Post::model()->count();
 
             $pages = new CPagination($total);
-            $pages->pageSize = 50;
+            $pages->pageSize = 20;
             $pages->applyLimit($criteria);
 
             $posts = Post::model()->findAll($criteria);
@@ -31,14 +33,52 @@ class PostController extends Controller
             ));
 	}
 }
-
+~~~
 
 Now on your view you will use it as a widget, like in the following sample:
 
+~~~
+[php]
 $this->widget('ext.yiinfinite-scroll.YiinfiniteScroller', array(
     'itemSelector' => 'div.post',
     'pages' => $pages,
 ));
+~~~
+
+Note that this will only output the necessary code to the pager. **It will not render the page items**. Since YiinfiniteScroller extends CBasePager, everything works exactly the same way as if you were using the CListPager or CLinkPager. So, you're need to manually render the items. 
+
+In this example, the items are stored in the $posts variable. In our view, we can render the posts by using a simple foreach loop, like in the example bellow:
+
+~~~
+[php]
+<?php foreach($posts as $post): ?>
+    <div class="post">
+        <p>Autor: <?php echo $post->author; ?></p>
+        <p><?php echo $post->text; ?></p>
+    </div>
+<?php endforeach; ?>
+~~~
+
+This is how the complete view file will look like:
+
+~~~
+[php]
+<div id="posts">
+<?php foreach($posts as $post): ?>
+    <div class="post">
+        <p>Autor: <?php echo $post->author; ?></p>
+        <p><?php echo $post->text; ?></p>
+    </div>
+<?php endforeach; ?>
+</div>
+<?php $this->widget('ext.yiinfinite-scroll.YiinfiniteScroller', array(
+    'contentSelector' => '#posts',
+    'itemSelector' => 'div.post',
+    'loadingText' => 'Loading...',
+    'donetext' => 'This is the end... my only friend, the end',
+    'pages' => $pages,
+)); ?>
+~~~
 
 
 There are a few properties that can be set for YiinfiniteScroller:
