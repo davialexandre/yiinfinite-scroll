@@ -39,7 +39,7 @@ class YiinfiniteScroller extends CBasePager {
         $this->createInfiniteScrollScript();
         $this->renderNavigation();
 
-        if($this->theresNoMorePages()) {
+        if($this->getPages()->getPageCount() > 0 && $this->theresNoMorePages()) {
             throw new CHttpException(404);
         }
     }
