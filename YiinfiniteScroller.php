@@ -61,7 +61,7 @@ class YiinfiniteScroller extends CBasePager {
     }
 
     public function registerClientScript() {
-        $url = CHtml::asset(Yii::getPathOfAlias('ext.yiinfinite-scroll.assets').'/jquery.infinitescroll.min.js');
+        $url = CHtml::asset(dirname(__FILE__).'/assets/jquery.infinitescroll.min.js');
         Yii::app()->clientScript->registerScriptFile($url);
     }
 
