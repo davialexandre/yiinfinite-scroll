@@ -18,41 +18,41 @@ It uses javascript to load and parse the new pages, but gracefully degrade in ca
 These are the properties that can be set for YiinfiniteScroller :
 	
 	array(
-	'loading' => array( // the loading object consisting of 
-        'finished' => undefined ,
-        'finishedMsg' => "<em>Congratulations, you've reached the end of the internet.</em>", // the message to show at the end of the list,
-        'img' =>  // image/gif that should be shown while loading,
-        'msg' => null,
-        'msgText' => "<em>Loading the next set of posts...</em>", // the message to be shown during loading,
-        'selector'=> null, // To which jquery selector should the loading object be attached,
-        'speed' => 'fast' // the speed at which loading happens,
-        'start'=> undefined,
-	),
-	'state' => array (  // Different States the plugin can be in returns true for corresponding state.
-        'isDuringAjax' => false,
-        'isInvalidPage' => false,
-        'isDestroyed' => false,
-        'isDone'  => false, // For when it goes all the way through the archive.
-        'isPaused' => false,
-        'currPage' => 1,
-	 ),
-    'debug' => false, // If set to true, prints debug output to console.log
-    'behavior' => undefined,
-    'binder' => $(window), // used to cache the selector for the element that will be scrolling
-    'contentSelector' => null, // the jquery selector of the content element.
-    'extraScrollPx' => 150,
-    'itemSelector' => "div.post", // Which item to generate on scroll
-    'animate' =>false,
-    'pathParse' => undefined,
-    'dataType' => 'html', // Whether html or JSON type of data
-    'appendCallback' => true //Callback function to append
-    'bufferPx' => 40;
-    'errorCallback' => 'function () { }',
-    'infid' => 0 // ID of the instance of the infinite-scroll plugin
-    'pixelsFromNavToBottom' => undefined,
-    'path'  => undefined, // Can either be an array of URL parts (e.g. ["/page/", "/"]) or a function that accepts the pge number and returns a URL
-    'prefill' => false,  // When the document is smaller than the window, load data until the document is larger or links are exhausted
-    'maxPage'=> undefined,   // To manually control maximum page (when maxPage is undefined, maximum page limitation is not work)
+		'loading' => array( // the loading object consisting of 
+        		'finished' => undefined ,
+        		'finishedMsg' => "<em>Congratulations, you've reached the end of the internet.</em>", // the message to show at the end of the list,
+        		'img' =>  // image/gif that should be shown while loading,
+        		'msg' => null,
+        		'msgText' => "<em>Loading the next set of posts...</em>", // the message to be shown during loading,
+        		'selector'=> null, // To which jquery selector should the loading object be attached,
+        		'speed' => 'fast' // the speed at which loading happens,
+        		'start'=> undefined,
+		),
+		'state' => array (  // Different States the plugin can be in returns true for corresponding state.
+        		'isDuringAjax' => false,
+        		'isInvalidPage' => false,
+        		'isDestroyed' => false,
+        		'isDone'  => false, // For when it goes all the way through the archive.
+        		'isPaused' => false,
+        		'currPage' => 1,
+	 	),
+    		'debug' => false, // If set to true, prints debug output to console.log
+    		'behavior' => undefined,
+    		'binder' => $(window), // used to cache the selector for the element that will be scrolling
+    		'contentSelector' => null, // the jquery selector of the content element.
+    		'extraScrollPx' => 150,
+    		'itemSelector' => "div.post", // Which item to generate on scroll
+    		'animate' =>false,
+    		'pathParse' => undefined,
+    		'dataType' => 'html', // Whether html or JSON type of data
+    		'appendCallback' => true //Callback function to append
+    		'bufferPx' => 40;
+    		'errorCallback' => 'function () { }',
+    		'infid' => 0 // ID of the instance of the infinite-scroll plugin
+    		'pixelsFromNavToBottom' => undefined,
+    		'path'  => undefined, // Can either be an array of URL parts (e.g. ["/page/", "/"]) or a function that accepts the pge number and returns a URL
+    		'prefill' => false,  // When the document is smaller than the window, load data until the document is larger or links are exhausted
+    		'maxPage'=> undefined,   // To manually control maximum page (when maxPage is undefined, maximum page limitation is not work)
 	);
 
 
