@@ -1,17 +1,17 @@
 Yii-infinte-scroll-2
 =====================
 
-This is an updated extension of davialexandre/yiinfinite-scroll 
+This is an updated extension of [davialexandre/yiinfinite-scroll](http://github.com/davialexandre/yiinfinite-scroll)
 
-This extension uses the infinite scroll jQuery plugin, from paulirish/infinite-scroll to create an infinite scrolling pagination, like in twitter. This kind of pagination is also called Endless Scroll.
+This extension uses the infinite scroll jQuery plugin, from [paulirish/infinite-scroll](http://github.com/paulirish/infinite-scroll) to create an infinite scrolling pagination, like in twitter. This kind of pagination is also called Endless Scroll.
 
 It uses javascript to load and parse the new pages, but gracefully degrade in cases where javascript is disabled and the users will still be able to access all the pages.
 
 ##Requirements
 
-1. yiisoft/yii - 1.1.4 +
-2. jquery/jquery ~ 1.7.2 
-3. paulirish/infinite-scroll - 2.0
+1. [Yiisoft/Yii](http://github.com/yiisoft/yii) - 1.1.4 +
+2. [jquery/jquery](http://github.com/jquery/jquery) ~ 1.7.2 
+3. [paulirish/infinite-scroll](http://github.com/paulirish/infinite-scroll) - 2.0
 
 ##Usage
 
