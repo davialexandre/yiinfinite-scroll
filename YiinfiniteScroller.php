@@ -16,11 +16,41 @@ class YiinfiniteScroller extends CBasePager {
     public $contentSelector = '#content';
 
     private $_options = array(
-        'loadingImg'    => null,
-        'loadingText'   => null,
-        'donetext'      => null,
-        'itemSelector'  => null,
-        'errorCallback' => null,
+        'loading'=> array(
+            'finished'=> null,
+            'finishedMsg'=> null,
+            'img'=> null,
+            'msg'=> null,
+            'msgText'=> null,
+            'selector'=> null,
+            'speed'=> null,
+            'start'=> null,
+        ),
+        'state'=> array (
+            'isDuringAjax'=> null,
+            'isInvalidPage'=> null,
+            'isDestroyed'=> null,
+            'isDone'=> null, 
+            'isPaused'=> null,
+            'currPage'=> null,
+        ),
+        'debug'=> null,
+        'behavior'=> null,
+        'binder'=> null,
+        'contentSelector'=> null,
+        'extraScrollPx'=> null,
+        'itemSelector'=> null,
+        'animate'=> null,
+        'pathParse'=> null,
+        'dataType'=> null,
+        'appendCallback'=> null,
+        'bufferPx'=> null,
+        'errorCallback'=> null,
+        'infid'=> null,
+        'pixelsFromNavToBottom'=> null,
+        'path'=> null, 
+        'prefill'=> null,
+        'maxPage'=>null,
     );
 
     private $_default_options = array(
