@@ -14,7 +14,7 @@ It uses javascript to load and parse the new pages, but gracefully degrade in ca
 3. paulirish/infinite-scroll - 2.0
 
 ##Usage
-
+__UPDATE: __ Added support for callback functions 
 These are the properties that can be set for YiinfiniteScroller :
 	
 	array(
@@ -53,6 +53,7 @@ These are the properties that can be set for YiinfiniteScroller :
     'path'  => undefined, // Can either be an array of URL parts (e.g. ["/page/", "/"]) or a function that accepts the pge number and returns a URL
     'prefill' => false,  // When the document is smaller than the window, load data until the document is larger or links are exhausted
     'maxPage'=> undefined,   // To manually control maximum page (when maxPage is undefined, maximum page limitation is not work)
+    'callBackFunction' => null, // JS function to be called as callback to be of the js:<your function>
 	);
 
 
