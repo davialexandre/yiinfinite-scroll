@@ -14,7 +14,7 @@ It uses javascript to load and parse the new pages, but gracefully degrade in ca
 3. [paulirish/infinite-scroll](http://github.com/paulirish/infinite-scroll) - 2.0
 
 ##Usage
-__UPDATE: __ Added support for callback functions 
+__UPDATE:__ Added support for callback functions 
 These are the properties that can be set for YiinfiniteScroller :
 	
 	array(
