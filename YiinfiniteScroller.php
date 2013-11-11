@@ -14,6 +14,7 @@
 class YiinfiniteScroller extends CBasePager {
 
     public $contentSelector = '#content';
+    public $navigationLinkText = 'next';
 
     private $_options = array(
         'loadingImg'    => null,
@@ -82,7 +83,7 @@ class YiinfiniteScroller extends CBasePager {
     }
 
     private function renderNavigation() {
-        $next_link = CHtml::link('next', $this->createPageUrl($this->currentPage+1));
+        $next_link = CHtml::link($this->navigationLinkText, $this->createPageUrl($this->currentPage+1));
         echo '<div class="infinite_navigation">'.$next_link.'</div>';
     }
 
