@@ -70,8 +70,8 @@ class YiinfiniteScroller extends CBasePager {
 
     private function createInfiniteScrollScript() {
         Yii::app()->clientScript->registerScript(
-                                uniqid(),
-                                    "$('{$this->contentSelector}').infinitescroll(".$this->buildInifiniteScrollOptions().");"
+            uniqid(),
+            "$('{$this->contentSelector}').infinitescroll(".$this->buildInifiniteScrollOptions().");"
         );
     }
 
