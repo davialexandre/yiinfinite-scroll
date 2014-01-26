@@ -1,7 +1,5 @@
-Yii-infinte-scroll-2
+Yii-infinte-scroll
 =====================
-
-This is an updated extension of [davialexandre/yiinfinite-scroll](http://github.com/davialexandre/yiinfinite-scroll)
 
 This extension uses the infinite scroll jQuery plugin, from [paulirish/infinite-scroll](http://github.com/paulirish/infinite-scroll) to create an infinite scrolling pagination, like in twitter. This kind of pagination is also called Endless Scroll.
 
@@ -115,3 +113,11 @@ This is how the complete view file will look like:
 	    'pages' => $pages,
 	)); ?>
 
+There are a few properties that can be set for YiinfiniteScroller:
+
+- contentSelector: The jQuery selector of the container element where the loaded items (from itemSelector) will be appended
+- loadingText: The text to be displayed and a new page is being loaded
+- donetext: The text to be displayed when all the pages had been loaded
+- pages:  The CPagination object
+- errorHandler: Javascrit function that is called when the ajax errors or 404s.
+- navigationLinkText: The text to be displayed in the navigation link (Usually visible only when javascript is disabled). The default value is "next".
