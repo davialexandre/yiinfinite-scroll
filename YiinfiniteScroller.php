@@ -36,7 +36,7 @@ class YiinfiniteScroller extends CBasePager {
     }
 
     public function run() {
-        if($this->pageCount > 1) {
+        if($this->getPageCount() > 1) {
             $this->registerClientScript();
             $this->createInfiniteScrollScript();
             $this->renderNavigation();
@@ -87,11 +87,11 @@ class YiinfiniteScroller extends CBasePager {
         echo '<div class="infinite_navigation">'.$next_link.'</div>';
     }
 
-    private function currentPageDoesntExists() {
-        if($this->pageCount > 1) {
-            return $this->currentPage > $this->pageCount;
+    public function currentPageDoesntExists() {
+        if($this->getPageCount() > 1) {
+            return $this->getCurrentPage() >= $this->getPageCount();
         } else {
-            return $this->currentPage > 0;
+            return $this->getCurrentPage() > 0;
         }
     }
 
