@@ -73,7 +73,8 @@ This is how the complete view file will look like:
 There are a few properties that can be set for YiinfiniteScroller:
 
 - contentSelector: The jQuery selector of the container element where the loaded items (from itemSelector) will be appended
-- loadingText: The text to be displayed and a new page is being loaded
+- loadingText: The text to be displayed while the new page is being loaded
+- loadingImg: The URL of the image displayed while a new page is being loaded
 - donetext: The text to be displayed when all the pages had been loaded
 - pages:  The CPagination object
 - errorCallback: Javascript function that is called when there are ajax errors or 404s.
