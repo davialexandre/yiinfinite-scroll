@@ -59,6 +59,35 @@ class YiinfiniteScrollerTest extends PHPUnit_Framework_TestCase
         $mock->run();
     }
 
+    public function testItShowsNavigationIfNotInTheLastPage()
+    {
+        $mock = $this->getMock('YiinfiniteScroller', ['getPageCount', 'getCurrentPage', 'createPageUrl']);
+        $mock->expects($this->any())
+             ->method('getPageCount')
+             ->willReturnOnConsecutiveCalls(3);
+        $mock->expects($this->any())
+             ->method('getCurrentPage')
+             ->willReturnOnConsecutiveCalls(1);
+        $mock->expects($this->any())
+             ->method('createPageUrl');
+
+        $this->assertNotEmpty($mock->renderNavigation());
+    }
+
+    public function testItDoesntShowNavigationInTheLastPage()
+    {
+        $mock = $this->getMock('YiinfiniteScroller', ['getPageCount', 'getCurrentPage', 'createPageUrl']);
+        $mock->expects($this->any())
+             ->method('getPageCount')
+             ->willReturnOnConsecutiveCalls(2);
+        $mock->expects($this->any())
+             ->method('getCurrentPage')
+             ->willReturnOnConsecutiveCalls(1);
+        $mock->expects($this->any())
+            ->method('createPageUrl');
+
+        $this->assertEmpty($mock->renderNavigation());
+    }
 }
 
 /**
@@ -70,3 +99,11 @@ class CBasePager {}
  * Mock empty class to replace the Yii's CHttpException
  */
 class CHttpException extends \Exception {}
+
+/**
+ * Mock empty class to replace the Yii's CHtml
+ */
+class CHtml
+{
+    public static function link($text, $url) {}
+}
