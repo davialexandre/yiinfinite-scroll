@@ -15,13 +15,14 @@ class YiinfiniteScroller extends CBasePager {
 
     public $contentSelector = '#content';
     public $navigationLinkText = 'next';
+    public $contentLoadedCallback = null;
 
     private $_options = array(
-        'loadingImg'    => null,
-        'loadingText'   => null,
-        'donetext'      => null,
-        'itemSelector'  => null,
-        'errorCallback' => null,
+        'loadingImg'            => null,
+        'loadingText'           => null,
+        'donetext'              => null,
+        'itemSelector'          => null,
+        'errorCallback'         => null,
     );
 
     private $_default_options = array(
@@ -69,9 +70,11 @@ class YiinfiniteScroller extends CBasePager {
     }
 
     private function createInfiniteScrollScript() {
+        $options = $this->buildInifiniteScrollOptions();
+        $contentLoadedCallback = CJavascript::encode($this->contentLoadedCallback);
         Yii::app()->clientScript->registerScript(
             uniqid(),
-            "$('{$this->contentSelector}').infinitescroll(".$this->buildInifiniteScrollOptions().");"
+            "$('{$this->contentSelector}').infinitescroll($options, $contentLoadedCallback);"
         );
     }
 

@@ -77,4 +77,5 @@ There are a few properties that can be set for YiinfiniteScroller:
 - donetext: The text to be displayed when all the pages had been loaded
 - pages:  The CPagination object
 - errorHandler: Javascrit function that is called when the ajax errors or 404s.
+- contentLoadedCallback: A Javascript function that is called when new itens are loaded. In its scope, this will be the DOM Element just loaded.
 - navigationLinkText: The text to be displayed in the navigation link (Usually visible only when javascript is disabled). The default value is "next".
