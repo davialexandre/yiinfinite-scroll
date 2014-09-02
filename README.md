@@ -79,3 +79,14 @@ There are a few properties that can be set for YiinfiniteScroller:
 - errorCallback: Javascript function that is called when there are ajax errors or 404s.
 - contentLoadedCallback: A Javascript function that is called when new itens are loaded. In its scope, this will be the DOM Element just loaded.
 - navigationLinkText: The text to be displayed in the navigation link (Usually visible only when javascript is disabled). The default value is "next".
+
+##Changelog
+- Release 1.3 (09/02/2014)
+    - Added the contentLoadedCallback
+    - Added tests!
+    - Fixed bug that loaded the last page twice
+    - Removed the navigation link in the last page. That link was point to a non existent page.
+
+- Release 1.2 (11/11/2013)
+    - Added the navigationLinkText property
+    - Fixed problems when there were 0 or 1 pages to be paged
